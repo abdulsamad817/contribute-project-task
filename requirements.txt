@@ -1,0 +1,12 @@
+Flask==2.3.0
+pymongo==4.4.0
+Werkzeug==2.3.0
+python-dotenv==1.0.0
+email-validator==2.1.0
+requests==2.31.0
+sendgrid==6.10.0
+Flask-Caching==2.0.2
+Flask-WTF==1.2.1
+Flask-Limiter==3.5.0
+cloudinary==1.36.0
+gunicorn==21.2.0

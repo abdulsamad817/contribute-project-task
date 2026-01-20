@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-box">
+            <h1>Verify Email</h1>
+            
+            <p style="color: #999; font-size: 12px; margin-bottom: 25px;">We sent a verification code to your email</p>
+            
+            <form id="verifyForm">
+                <div class="form-group">
+                    <label for="code">Verification Code</label>
+                    <input type="text" id="code" name="code" placeholder="Enter 6-digit code">
+                    <div class="error-message" id="codeError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="At least 8 characters">
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                
+                <button type="submit" class="btn">Verify & Sign Up</button>
+            </form>
+            
+            <div class="link-container" style="margin-top: 30px;">
+                <p>Already have an account? <a href="{{ url_for('login') }}">Log in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/verify.js') }}"></script>
+</body>
+</html>

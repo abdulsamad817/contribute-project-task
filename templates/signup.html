@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-box">
+            <h1>Sign Up</h1>
+            
+            <!-- Step 1: Email and Name -->
+            <div id="step1" class="step active">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Username</label>
+                    <input type="text" id="name" name="name" placeholder="Enter username (letters, numbers, _)">
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                
+                <button type="button" class="btn" onclick="nextStep1()">Next</button>
+            </div>
+            
+            <!-- Step 2: Date of Birth and Gender -->
+            <div id="step2" class="step">
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob">
+                    <div class="error-message" id="dobError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="male"> Male
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="female"> Female
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="other"> Other
+                        </label>
+                    </div>
+                    <div class="error-message" id="genderError"></div>
+                </div>
+                
+                <button type="button" class="btn-secondary" onclick="prevStep()">Back</button>
+                <button type="button" class="btn" onclick="nextStep2()">Next</button>
+            </div>
+            
+            <!-- Step 3: Verification Code and Password -->
+            <div id="step3" class="step">
+                <p id="step3Status" style="color: #999; font-size: 12px; margin-bottom: 25px;">We sent a verification code to your email</p>
+                
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <p style="color: #999; font-size: 12px;">Didn't receive code?</p>
+                    <button type="button" onclick="resendCode()" style="background: none; border: none; color: #6366f1; cursor: pointer; font-size: 13px; padding: 0; text-decoration: underline;">Resend Code</button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="code">Verification Code</label>
+                    <input type="text" id="code" name="code" placeholder="Enter 6-digit code">
+                    <div class="error-message" id="codeError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="At least 8 characters">
+                    <div class="error-message" id="passwordError"></div>
+                </div>
+                
+                <button type="button" class="btn-secondary" onclick="prevStep()">Back</button>
+                <button type="button" class="btn" onclick="submitSignup()">Sign Up</button>
+            </div>
+            
+            <div class="link-container" style="margin-top: 30px;">
+                <p>Already have an account? <a href="{{ url_for('login') }}">Log in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
+</body>
+</html>

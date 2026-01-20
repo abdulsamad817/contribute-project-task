@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.auth-box {
+    background: rgba(20, 20, 35, 0.95);
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    margin: 0 auto;
+}
+
+.auth-box h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1.5px solid rgba(100, 100, 120, 0.4);
+    border-radius: 8px;
+    background: rgba(30, 30, 50, 0.8);
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #888;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: rgba(30, 30, 50, 1);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-group input.error {
+    border-color: #ff6b6b;
+    background: rgba(30, 30, 50, 1);
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 16px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    gap: 8px;
+}
+
+.radio-label input[type="radio"] {
+    cursor: pointer;
+    accent-color: #ffff;
+}
+
+.btn,
+.btn-secondary {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: rgba(100, 100, 120, 0.2);
+    color: white;
+    border: 1px solid rgba(100, 100, 120, 0.4);
+    display: inline-block;
+    width: calc(48% - 8px);
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.btn-secondary:hover {
+    background: rgba(100, 100, 120, 0.35);
+    border-color: rgba(100, 100, 120, 0.6);
+}
+
+.btn-secondary + .btn {
+    width: calc(48% - 8px);
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.link-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.link-container p {
+    color: #999;
+    font-size: 13px;
+}
+
+.link-container a {
+    color: white;
+    text-decoration: underline;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.link-container a:hover {
+    color: #ccc;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #6366f1;
+}
+
+.checkbox-wrapper label {
+    margin: 0;
+    cursor: pointer;
+    font-size: 13px;
+    color: #ccc;
+}
+
+.top-load-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #6366f1);
+    z-index: 9999;
+    animation: slideLoad 1.5s ease-in-out infinite;
+}
+
+@keyframes slideLoad {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 90%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .auth-box {
+        padding: 40px 30px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    .auth-box h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .btn,
+    .btn-secondary {
+        padding: 12px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .radio-group {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    body {
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    .container {
+        padding: 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .auth-box {
+        padding: 30px 20px;
+        width: 90%;
+        max-width: 350px;
+        border-radius: 12px;
+        margin: 0 auto;
+    }
+
+    .auth-box h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+        margin-bottom: 8px;
+    }
+
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="date"],
+    .form-group select {
+        padding: 12px 12px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    .btn,
+    .btn-secondary {
+        padding: 12px 14px;
+        font-size: 14px;
+        margin-top: 12px;
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        display: block !important;
+    }
+
+    .btn-secondary + .btn {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
+    }
+
+    .radio-label {
+        font-size: 13px;
+        padding: 10px;
+        background: rgba(100, 100, 120, 0.1);
+        border-radius: 6px;
+        border: 1px solid rgba(100, 100, 120, 0.2);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .radio-label:hover {
+        background: rgba(100, 100, 120, 0.2);
+        border-color: rgba(100, 100, 120, 0.4);
+    }
+
+    .checkbox-wrapper {
+        gap: 8px;
+        margin: 12px 0;
+    }
+
+    .checkbox-wrapper input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+    }
+
+    .checkbox-wrapper label {
+        font-size: 12px;
+    }
+
+    .link-container {
+        margin-top: 15px;
+    }
+
+    .link-container p {
+        font-size: 12px;
+    }
+
+    .error-message {
+        font-size: 11px;
+        margin-top: 4px;
+    }
+
+    .top-load-bar {
+        height: 2px;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        min-height: 100vh;
+        width: 100%;
+    }
+
+    .container {
+        padding: 12px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .auth-box {
+        padding: 25px 16px;
+        width: 95%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .auth-box h1 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group input[type="email"],
+    .form-group input[type="password"],
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="date"],
+    .form-group select {
+        padding: 11px 10px;
+        font-size: 16px;
+    }
+
+    .btn,
+    .btn-secondary {
+        padding: 11px 12px;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .radio-group {
+        gap: 10px;
+    }
+
+    .radio-label {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-height: 600px) and (max-width: 768px) {
+    .container {
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .auth-box {
+        padding: 25px 20px;
+    }
+
+    .auth-box h1 {
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .btn,
+    .btn-secondary {
+        margin-top: 10px;
+        padding: 10px;
+    }
+}
