@@ -1,6 +1,14 @@
-Abdul samad
+ 👨‍💻 Abdul Samad
 
-![coding gif](https://media.giphy.com/media/qgQUggAC3Pfv687yqPC/giphy.gif)
+💡 Systems & Backend Engineer
+
+![coding gif](https://media.tenor.com/1y3p0F5h8gQAAAAC/coding.gif)
+
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=abdulsamad817&show_icons=true)
+
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=abdulsamad817&theme=tokyo-night)
+
 
 👨‍💻 About Me
 Systems and Backend Engineer with experience in infrastructure, automation, and cloud systems. I enjoy building scalable systems and solving complex technical problems.
