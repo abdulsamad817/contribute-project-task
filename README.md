@@ -3,7 +3,7 @@
 💡 Systems & Backend Engineer
 
 
-<img width="210" height="210" alt="17783367297905639965646846096674" src="https://github.com/user-attachments/assets/3f3f96d9-7215-4569-82e6-2f1976a36581" />
+<img width="480" height="274" alt="17783370855776872394536556130812" src="https://github.com/user-attachments/assets/4a465214-9877-4d7b-b773-3917c4a7e580" />
 
 
 
